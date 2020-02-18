@@ -27,7 +27,7 @@ seqpare <BED file folder> <query BED file> -m 1 -o output
 ### Similarity mapping of two different collections of interval sets  
 
 ```
-seqpare <BED file folder> <query BED file> -m 2 -o output
+seqpare <BED file folder 1> <query BED file folder 2> -m 2 -o output
 ```
 
 ### Self similarity mapping of a collection of interval sets
