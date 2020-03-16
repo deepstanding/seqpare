@@ -75,7 +75,7 @@ int main(int argc, char **argv)
 		        for(i=0;i<nf;i++){
 		        	n1 = sm[i].N1;
 		        	n2 = sm[i].N2;
-		        	float smi = sm[i].teo/((float)(n1+n2)-sm[i].teo);
+		        	double smi = sm[i].teo/((double)(n1+n2)-sm[i].teo);
 		        	fprintf(fp, "%i\t%i\t%12.8f\t%lld\t%12.8f\t%s\n", n1, n2, sm[i].teo, (long long)sm[i].tc, smi, file_ids[i]);
 				} 
 		        fclose(fp);

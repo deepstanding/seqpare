@@ -25,7 +25,7 @@ typedef struct {
 	int32_t N1;
 	int32_t N2;
 	int64_t tc;	//total counts
-	float teo;	//total effective overlaps
+	double teo;	//total effective overlaps
 } seqpare_t;
 
 typedef struct {						//as database
