@@ -66,3 +66,21 @@ http://hgdownload.cse.ucsc.edu/goldenPath/hg19/database/
 Four files in the Test_results folder.
 
 [ailist]: https://github.com/databio/AIList
+
+## Verify the result
+
+The original data has 100 intervals sets of size ~5GB. Because of the space limit of Github, only 30 small datasets (~60MB) are included in the folder UCSC_30.
+
+To run seqpare:
+```
+time seqpare "ucsc_30/*" "ucsc_30/affyGnf1h.bed.gz" -m 1 -o ucsc30_seqpare
+```
+It takes 2.99s on a laptop. The output file ucsc30_seqpare lists the similarity between affyGnf1h interval set and all 30 interval sets.
+
+To run GIGGLE, download giggle from https://github.com/ryanlayer/giggle, then
+```
+ulimit -Sn 16384
+giggle index -i "ucsc_30/*.*" -o ucsc_30.giggle -s
+time giggle search -i ucsc_30.giggle -q "ucsc_30/affyGnf1h.bed.gz" -s > affyGnf1h_ucsc30_giggle
+```
+It takes 5m12.81s. The output file affyGnf1h_uscs30_giggle contains the p-values and odds-ratios.
